@@ -1,0 +1,23 @@
+{
+  "name": "apolo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohanesCarlo/Apolo.git"
+  },
+  "author": "Carlo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JohanesCarlo/Apolo/issues"
+  },
+  "homepage": "https://github.com/JohanesCarlo/Apolo#readme",
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0"
+  }
+}
