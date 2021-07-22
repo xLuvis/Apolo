@@ -38,7 +38,7 @@ client.on("message", async (message) => {
 });
 
 client.on("inviteCreate" , async (invite) => {
-    const embed = new MessageEmbed()
+    const embed = new Discord.MessageEmbed()
     .setAuthor(invite.guild.name + " : INVITE LINK CREATED", invite.guild.iconURL())
     .addField("CHANNEL :", invite.channel)
     .addField("INVITE LINK :", `https://discord.gg/${invite.code}`)
@@ -51,7 +51,7 @@ client.on("inviteCreate" , async (invite) => {
 });
 
 client.on("inviteDelete", async (invite) => {
-    const embed = new MessageEmbed()
+    const embed = new Discord.MessageEmbed()
     .setAuthor(invite.guild.name + " : INVITE LINK DELETED / EXPIRED", invite.guild.iconURL())
     .addField("CHANNEL :", invite.channel)
     .addField("INVITE LINK :", `https://discord.gg/${invite.code}`)
