@@ -36,3 +36,28 @@ client.on("message", async (message) => {
         };
     };
 });
+
+client.on("inviteCreate" , async (invite) => {
+    const embed = new MessageEmbed()
+    .setAuthor(invite.guild.name + " : INVITE LINK CREATED", invite.guild.iconURL())
+    .addField("CHANNEL :", invite.channel)
+    .addField("INVITE LINK :", `https://discord.gg/${invite.code}`)
+    .addField("INVITER :", `${invite.inviter} • \`${invite.inviter.id}\``)
+    .setColor("#800000")
+    .setFooter(`Powered By : ${client.user.tag}`)
+    .setTimestamp();
+
+    invite.guild.channels.cache.get("CHANNEL LU").send(embed);
+});
+
+client.on("inviteDelete", async (invite) => {
+    const embed = new MessageEmbed()
+    .setAuthor(invite.guild.name + " : INVITE LINK DELETED / EXPIRED", invite.guild.iconURL())
+    .addField("CHANNEL :", invite.channel)
+    .addField("INVITE LINK :", `https://discord.gg/${invite.code}`)
+    .setColor("#800000")
+    .setFooter(`Powered By : ${client.user.tag}`)
+    .setTimestamp();
+    
+    invite.guild.channels.cache.get("CHANNEL LU").send(embed);
+});
