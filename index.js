@@ -9,7 +9,16 @@ client.login(process.env.TOKEN);
 
 client.on("ready", () => {
     console.log(`Logged in as ${client.user.tag}`);
-    client.user.setActivity("Visual Studio Code");
+
+    const status = [
+        `a`,
+        `b`,
+        `c`      
+    ]
+    setInterval(() => {
+        client.user.setActivity(status[Math.floor(Math.random() * status.length)], {type : "LISTENING"})
+    }, 5000)
+
 });
 
 client.commands = new Discord.Collection();
